@@ -1,5 +1,7 @@
 name: 'C++ CI'
-using: 'node16'
+
+runs:
+  using: 'node16'
 
 on:
   push:
