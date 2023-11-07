@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,6 +20,7 @@ jobs:
       - run: cmake --build . --target package
       - name: Create Release
         id: create_release
+        permissions: write-all
 #        uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
