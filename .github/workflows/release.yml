@@ -24,11 +24,10 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            if (!process.env.RELEASE_TAG) {
-              core.setFailed("The environment variable RELEASE_TAG is not defined.")
-
-              return;
-            }
+            #if (!process.env.RELEASE_TAG) {
+            #  core.setFailed("The environment variable RELEASE_TAG is not defined.")
+            #  return;
+            #}
 
             try {
               const response = await github.rest.repos.createRelease({
